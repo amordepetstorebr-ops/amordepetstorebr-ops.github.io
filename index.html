@@ -1,0 +1,271 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giga+ Fibra | Atendimento</title>
+
+<link rel="icon" type="image/x-icon" href="favico.ico">
+<link href="css/all.min.css" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(to bottom,#ffffff,#f2f2f2);
+    color:#06077d;
+}
+
+/* CONTAINER */
+.container{
+    width:100%;
+    max-width:560px;
+    margin:0 auto;
+}
+
+/* ===== LOADER ===== */
+#loader{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to bottom,#ffffff,#f2f2f2);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.spinner{
+    border:6px solid #f3f3f3;
+    border-top:6px solid #06077d;
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    animation:spin 1s linear infinite;
+    margin-bottom:15px;
+}
+
+@keyframes spin{
+    100%{transform:rotate(360deg);}
+}
+
+/* HEADER */
+.header{
+    background:url('images/suporte.webp') center/cover no-repeat;
+    height:25vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.header img{
+    max-width:180px;
+}
+
+/* ===== HERO ===== */
+.hero{
+    padding:20px 20px 10px 20px; /* menos espaço inferior */
+    display:flex;
+    justify-content:center;
+}
+
+.hero-card{
+    width:100%;
+    max-width:560px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    background:#ffffff;
+}
+
+.hero-card img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* HERO maior no desktop */
+@media(min-width:992px){
+    .hero-card{
+        max-width:1000px;
+    }
+}
+
+/* ===== CONTACT ===== */
+.contact{
+    padding:10px 20px 25px 20px; /* menos espaço superior */
+    text-align:center;
+}
+
+.contact h2{
+    margin-bottom:18px;
+}
+
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    max-width:560px;
+    margin:0 auto;
+}
+
+.btn{
+    background:linear-gradient(145deg,#06077d,#0a0bb5);
+    color:#ffffff;
+    padding:15px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    transition:0.3s;
+    box-shadow:0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn:hover{
+    transform:scale(1.03);
+}
+
+/* AVISO */
+.aviso{
+    font-size:12px;
+    padding:20px;
+    text-align:center;
+    line-height:1.5;
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:linear-gradient(145deg,#06077d,#0a0bb5);
+    color:#ffffff;
+    padding:25px 15px;
+    text-align:center;
+    margin-top:30px;
+}
+
+footer a{
+    color:#ffffff;
+    text-decoration:underline;
+    cursor:pointer;
+}
+
+/* ===== WHATS FLOAT ===== */
+.whatsapp-float{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:#fff;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:26px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    z-index:999;
+    text-decoration:none;
+}
+</style>
+</head>
+<body>
+
+<div id="loader">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+</div>
+
+<header class="header">
+    <img src="images/logo.png" alt="Giga+ Fibra">
+</header>
+
+<section class="hero">
+    <div class="hero-card">
+        <img src="images/hero.png" alt="Atendimento Giga+ Fibra">
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Central de Atendimento</h2>
+
+    <div class="buttons">
+        <a href="#" onclick="sendWhats('Olá, gostaria de atendimento.')" class="btn">
+            <i class="fa-brands fa-whatsapp"></i> Atendimento
+        </a>
+
+        <a href="#" onclick="sendWhats('Olá, desejo solicitar cancelamento do meu plano.')" class="btn">
+            <i class="fa-solid fa-ban"></i> Cancelamento
+        </a>
+
+        <a href="#" onclick="sendWhats('Olá, gostaria de consultar minha fatura.')" class="btn">
+            <i class="fa-solid fa-file-invoice"></i> Consultar Fatura
+        </a>
+
+        <a href="#" onclick="sendWhats('Olá, preciso falar com um atendente.')" class="btn">
+            <i class="fa-solid fa-headset"></i> Falar com um Atendente
+        </a>
+    </div>
+</section>
+
+<section class="aviso">
+Este site é um portal informativo independente de orientação técnica para usuários de serviços de internet. Não somos operadora de telecomunicações, provedor de internet ou canal oficial de atendimento de empresas do setor. As marcas eventualmente mencionadas são utilizadas apenas para fins informativos. Para suporte oficial, alterações contratuais ou serviços técnicos, utilize sempre os canais oficiais das operadoras.
+</section>
+
+<footer>
+        <p>
+          Este site é um portal informativo independente, sem vínculo, parceria
+          ou representação com quaisquer empresas, marcas ou prestadores de
+          serviços mencionados.
+        </p>
+	<p></p>
+        <p>
+          Não realizamos atendimentos, vendas, intermediações ou suporte ao
+          cliente. Nosso conteúdo tem caráter exclusivamente informativo, com o
+          objetivo de orientar usuários na busca por canais oficiais.
+        </p>
+	<p></p>
+        <p>
+          Eventuais redirecionamentos levam a ambientes externos, sob
+          responsabilidade exclusiva de seus respectivos operadores, sujeitos aos
+          seus próprios termos e políticas.
+        </p>
+	<p></p>
+        <p>
+          Ao utilizar este site, o usuário declara estar ciente dessas
+          condições.
+        </p>
+	<p></p>
+      
+      <p> REDE SOLUTION SERVICOS E TELECOM LTDA - CNPJ: 24.272.748/0001-01</p>
+      <p>©2026. Todos os direitos reservados</p>
+    </footer>
+
+<a href="#" onclick="sendWhats('Olá, preciso de atendimento.')" class="whatsapp-float">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+window.onload=function(){
+    setTimeout(function(){
+        document.getElementById("loader").style.display="none";
+    },1500);
+};
+
+function sendWhats(message){
+    const number="5511919650909"; // ALTERAR NÚMERO
+    const url="https://wa.me/"+number+"?text="+encodeURIComponent(message);
+    window.open(url,"_blank");
+}
+</script>
+
+
+</body></html>
