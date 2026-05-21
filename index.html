@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova São Paulo - Organização Imobiliária</title>
+    <style>
+        /* Reset e Configurações Básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* Cabeçalho e Navegação */
+        header {
+            background-color: #0f2c59;
+            color: #fff;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: #dac0a3;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #dac0a3;
+        }
+
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(15, 44, 89, 0.8), rgba(15, 44, 89, 0.8)), url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            height: 60vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            margin-top: 60px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        /* Seções do Site */
+        section {
+            padding: 5rem 2rem 3rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #0f2c59;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #dac0a3;
+        }
+
+        /* Grid de Serviços */
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .servico-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid #0f2c59;
+        }
+
+        .servico-card h3 {
+            color: #0f2c59;
+            margin-bottom: 1rem;
+        }
+
+        /* Quem Somos */
+        .quem-somos-content {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: justify;
+        }
+
+        /* Política de Privacidade */
+        .privacidade-content {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            font-size: 0.95rem;
+        }
+
+        .privacidade-content h3 {
+            color: #0f2c59;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #0f2c59;
+            color: #fff;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-top: 4rem;
+            border-top: 4px solid #dac0a3;
+            font-size: 0.9rem;
+        }
+
+        .footer-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand {
+            font-weight: bold;
+            color: #dac0a3;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsividade para Celulares */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                margin-top: 10px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            .hero {
+                margin-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho / Menu de Navegação -->
+    <header>
+        <div class="logo">
+            <h1>Nova São Paulo</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#privacidade">Privacidade</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner Principal -->
+    <div class="hero">
+        <h2>Sua conquista, nosso compromisso.</h2>
+        <p>Encontre as melhores oportunidades de imóveis em São Paulo com a segurança e a tradição que você merece.</p>
+    </div>
+
+    <!-- Seção: Serviços -->
+    <section id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="servicos-grid">
+            <div class="servico-card">
+                <h3>Venda de Imóveis</h3>
+                <p>Ajudamos você a encontrar o imóvel ideal ou a vender sua propriedade com agilidade e a melhor avaliação de mercado.</p>
+            </div>
+            <div class="servico-card">
+                <h3>Locação Residencial e Comercial</h3>
+                <p>Gestão completa de aluguéis com análise criteriosa de fichas e total segurança jurídica para proprietários e inquilinos.</p>
+            </div>
+            <div class="servico-card">
+                <h3>Administração de Bens</h3>
+                <p>Cuidamos do seu patrimônio imobiliário de forma transparente, cuidando de contratos, vistorias e repasses financeiros.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Quem Somos -->
+    <section id="quem-somos">
+        <h2>Quem Somos</h2>
+        <div class="quem-somos-content">
+            <p>A <strong>ORGANIZACAO IMOBILIARIA NOVA SAO PAULO LTDA</strong> é uma empresa consolidada no mercado imobiliário, dedicada a transformar a experiência de comprar, vender ou alugar imóveis em São Paulo.</p>
+            <br>
+            <p>Pautados pela ética, transparência e profundo conhecimento de mercado, nossa missão é oferecer soluções imobiliárias personalizadas que tragam tranquilidade e excelentes resultados para nossos clientes. Seja na busca pelo primeiro lar ou na gestão de grandes patrimônios, a Nova São Paulo é sua parceira de confiança.</p>
+        </div>
+    </section>
+
+    <!-- Seção: Política de Privacidade -->
+    <section id="privacidade">
+        <h2>Política de Privacidade</h2>
+        <div class="privacidade-content">
+            <p>Esta Política de Privacidade descreve como a <strong>ORGANIZACAO IMOBILIARIA NOVA SAO PAULO LTDA</strong> coleta, usa e protege as informações coletadas através do nosso site, em conformidade com a Lei Geral de Proteção de Dados (LGPD).</p>
+            
+            <h3>1. Coleta de Informações</h3>
+            <p>Coletamos informações que você nos fornece diretamente ao preencher formulários de contato ou de interesse em imóveis, tais como nome, e-mail, telefone e detalhes sobre o tipo de imóvel que procura.</p>
+            
+            <h3>2. Uso dos Dados</h3>
+            <p>Os dados coletados são utilizados exclusivamente para responder às suas solicitações, enviar propostas comerciais de seu interesse e melhorar nossos serviços de atendimento.</p>
+            
+            <h3>3. Proteção e Segurança</h3>
+            <p>Implementamos medidas de segurança adequadas para proteger seus dados contra acessos não autorizados, alterações ou divulgações. Nós nunca vendemos ou compartilhamos suas informações com terceiros para fins publicitários.</p>
+        </div>
+    </section>
+
+    <!-- Rodapé com Dados da Empresa -->
+    <footer>
+        <div class="footer-info">
+            <p class="footer-brand">ORGANIZACAO IMOBILIARIA NOVA SAO PAULO LTDA - EPP</p>
+            <p><strong>CNPJ:</strong> 62.407.218/0001-12</p>
+            <p><strong>Endereço:</strong> AV JABAQUARA, 1943 E 1947 - Bairro: Mirandópolis</p>
+            <p>CEP: 04045-003 - São Paulo / SP</p>
+        </div>
+    </footer>
+
+</body>
+</html>
